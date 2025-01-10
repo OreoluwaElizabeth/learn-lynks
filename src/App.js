@@ -1,25 +1,26 @@
-// import logo from './logo.svg';
-// import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './Component/Header';
+import LandingPage from './Component/LandingPage';
+import About from './Component/About';
+import Features from './Component/Features';
+import Register from './Component/Register';
+import Login from './Component/Login';
+import StudentDashboard from './Component/StudentDashboard';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
+function App() {
+    return (
+        <BrowserRouter>
+            <Header />
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/features" element={<Features />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />}/>
+                <Route path="/student/dashboard" element={<StudentDashboard />}/>
+            </Routes>
+        </BrowserRouter>
+    );
+};
 
-// export default App;
+export default App;
