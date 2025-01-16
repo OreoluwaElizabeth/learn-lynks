@@ -1,26 +1,28 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import TeachersDashboard from './Pages/TeachersDashbard';
-import CreateCurriculum from './Components/CreateCurriculum';
-import NewRegister from './Pages/NewRegister';
-import CurriculumPage from './Pages/CurriculumPage';
-import LessonPlan from './Components/LessonPlan';
-import AvailableCurriculum from './Components/AvailableCurriculum';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './Component/Header';
+import LandingPage from './Component/LandingPage';
+import About from './Component/About';
+import Features from './Component/Features';
+import Register from './Component/Register';
+import Login from './Component/Login';
+import StudentDashboard from './Component/StudentDashboard';
+import Profile from './Component/Profile';
 
-const App = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<TeachersDashboard />} />
-        <Route path="/create-curriculum" element={<CreateCurriculum />} />
-        <Route path="/register" element={<NewRegister />} />
-        <Route path="/curriculumPage" element={<CurriculumPage />} />
-        <Route path='/lessonPlan' element={<LessonPlan />} />
-        <Route path='AvaialableCurriculum' element={<AvailableCurriculum />} />
-      </Routes>
-    </Router>
-  );
+function App() {
+    return (
+        <BrowserRouter>
+            <Header />
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/features" element={<Features />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />}/>
+                <Route path="/student/dashboard" element={<StudentDashboard />}/>
+                <Route path="/student/profile" element={<Profile />} />
+            </Routes>
+        </BrowserRouter>
+    );
 };
 
 export default App;
