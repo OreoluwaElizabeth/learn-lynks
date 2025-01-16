@@ -6,6 +6,7 @@ import Features from './Component/Features';
 import Register from './Component/Register';
 import Login from './Component/Login';
 import StudentDashboard from './Component/StudentDashboard';
+import Profile from './Component/Profile';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />}/>
                 <Route path="/student/dashboard" element={<StudentDashboard />}/>
+                <Route path="/student/profile" element={<Profile />} />
             </Routes>
         </BrowserRouter>
     );
