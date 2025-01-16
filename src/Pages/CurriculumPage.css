@@ -1,0 +1,19 @@
+.curriculum{
+    display: flex;
+}
+
+.container{
+    justify-items: center;
+
+}
+
+.table, td, th{
+    font-size: 30px;
+    border: 1px solid black;
+    ;
+}
+
+.table {
+    margin: 0px 30px 0px;
+    border-collapse: collapse;
+}
