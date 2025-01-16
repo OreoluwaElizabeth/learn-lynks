@@ -21,50 +21,50 @@ const Register = () => {
       e.preventDefault();
       setLoading(true);
       // console.log('Form submitted:', { firstName, lastName, email, password, role });
-  
       try {
-        const response = await axios({
-          method: 'post',
-          url: 'http://localhost:8080/register',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          data: JSON.stringify({
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            username: username,
-            password: password,
-            confirmPassword: confirmPassword,
-            role: role,
-          }),
-        });  
 
-        if (response.ok) {
-          if (role === 'Student') {
-            navigate('/student/dashboard');
-          } else if (role === 'Teacher') {
-            navigate('/teacher/dashboard');
-          } else {
-            navigate('/parent/dashboard');
-          }
+        const response = await axios.post('http://localhost:8080/user/register', {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          username: username,
+          password: password,
+          confirmPassword: confirmPassword,
+          role: role
+        });
+        
+      
+        if (role === 'STUDENT') {
+          navigate('/student/dashboard');
+        } else if (role === 'TEACHER') {
+          navigate('/teacher/dashboard');
+        } else {
+          navigate('/parent/dashboard');
         }
+        
       } catch (error) {
-        console.error(error);
+        if (error.response) {
+          // Server responded with a status other than 200 range
+          console.error('Error response:', error.response.data);
+        } else if (error.request) {
+          // Request was made but no response received
+          console.error('Error request:', error.request);
+        } else {
+          // Something happened in setting up the request
+          console.error('Error message:', error.message);
+        }
       } finally {
         setLoading(false);
       }
-    };
+    }
 
-    // navigate('/student/dashboard')
-    
-  
     return (
         <div className='register-page'>
             <div className='register-form'>
                 <h2>Register</h2>
                 <form onSubmit={handleSubmit}>
-                    <div className='form-group'>
+
+                <div className='form-group'>
                         <label>First Name *</label>
                         <input 
                             type="text"
@@ -122,13 +122,17 @@ const Register = () => {
                     <label>Role *</label>
                     <select value={role} onChange={(e) => setRole(e.target.value)} required>
                         <option value="">Select Role</option>
-                        <option value="Teacher">Teacher</option>
-                        <option value="Student">Student</option>
-                        <option value="Parent">Parent</option>
+                        <option value="TEACHER">TEACHER</option>
+                        <option value="STUDENT">STUDENT</option>
+                        <option value="PARENT">PARENT</option>
                     </select>
                     <p>Selected Role: {role}</p>
                     </div>
-                    <button type="submit">Register</button>
+
+                    <button type='submit' disabled={loading}>
+                        {loading ? 'Signing up...' : 'Sign Up'}
+                    </button>
+
                     {loading && (
                         <div className='loading-animation'>
                             <div className='spinner' />
