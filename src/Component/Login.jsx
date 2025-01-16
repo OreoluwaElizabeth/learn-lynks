@@ -7,17 +7,28 @@ const Login = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        if (!email || !password) {
-            setError('Please fill in all fields');
-        } else {
-            setLoading(true);
-            setTimeout(() => {
-                console.log('Login successful:', { email, password });
-                setLoading(false);
-            }, 2000)
-        }
+        try {
+            const response = await fetch('http://localhost:8080/login', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(formData),
+            });
+        
+            if (response.ok) {
+              const result = await response.text();
+              alert(result);
+            } 
+            else {
+              alert('Failed to Register');
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while creating the curriculum');   
+          }
     };
 
     return (

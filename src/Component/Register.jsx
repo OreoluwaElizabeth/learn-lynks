@@ -22,6 +22,7 @@ const Register = () => {
       setLoading(true);
       // console.log('Form submitted:', { firstName, lastName, email, password, role });
       try {
+
         const response = await axios.post('http://localhost:8080/user/register', {
           firstName: firstName,
           lastName: lastName,
@@ -40,6 +41,7 @@ const Register = () => {
         } else {
           navigate('/parent/dashboard');
         }
+        
       } catch (error) {
         if (error.response) {
           // Server responded with a status other than 200 range

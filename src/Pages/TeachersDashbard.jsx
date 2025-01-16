@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+    import React, { useState } from 'react';
 import './TeachersDashboard.css';
 import CreateCurriculum from '../Components/CreateCurriculum';
 import NewRegister from './NewRegister';
@@ -140,3 +140,4 @@ export default TeachersDashboard;
 // };
 
 // export default TeachersDashboard;
+
