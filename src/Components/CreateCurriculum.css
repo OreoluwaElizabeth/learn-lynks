@@ -1,0 +1,23 @@
+.form-container{
+    text-align: left;
+    align-content: center;
+    justify-items: center;
+    margin-left: 180px;
+}
+
+.form-container input{
+    font-size: 30px;
+
+    margin-bottom: 20px;
+}
+
+.form-container button{
+    font-size: 30px;
+    background-color: #2E4053;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    border-radius: 20px;
+}

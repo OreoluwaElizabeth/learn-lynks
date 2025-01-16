@@ -1,0 +1,13 @@
+.form-container{
+    background-color: rgb(247, 238, 211);
+    width: 1600px;
+}
+
+.form-container label{
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.form-container input{
+    width: 500px;
+}
