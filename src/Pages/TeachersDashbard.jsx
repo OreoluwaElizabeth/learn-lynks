@@ -3,6 +3,8 @@ import './TeachersDashboard.css';
 import CreateCurriculum from '../Components/CreateCurriculum';
 import NewRegister from './NewRegister';
 import LessonPlan from '../Components/LessonPlan';
+import UniversityEducationCurriculum from '../Components/UniversityEducationCurriculum';
+import AvailableCurriculum from '../Components/AvailableCurriculum';
 // import Login from './Login';
 
 const TeachersDashboard = () => {
@@ -26,15 +28,16 @@ const TeachersDashboard = () => {
                 <option value="edit">Edit Curriculum</option>
                 <option value="delete">Delete Curriculum</option>
                 <option value="view">View Curriculum</option>
-                <option value="download">Download Curriculum</option>
+                <option value="downloadCurriculum">Download Curriculum</option>
               </select>
             </label>
           </li>
           <li>
             <label>
               Lesson Plan
-              <select>
-                <option value="create">Create Lesson Plan</option>
+              <select onChange={handleCurriculumChange}>
+                <option value="">Select an option</option>
+                <option value="createLesson">Create Lesson Plan</option>
                 <option value="edit">Edit Lesson Plan</option>
                 <option value="delete">Delete Lesson Plan</option>
                 <option value="view">View Lesson Plan</option>
@@ -55,19 +58,31 @@ const TeachersDashboard = () => {
         </ul>
         <div>
         {/* Register <NewRegister /> */}
+        {/* <UniversityEducationCurriculum /> */}
         </div>
         <hr />
 
-        {/* Conditionally Render CreateCurriculum */}
         {selectedOption === 'create' && (
           <div className="form-container">
             <h2>Create Curriculum</h2>
             <CreateCurriculum />
           </div>
         )}
+
+        {selectedOption === "createLesson" && (
+            <div className="form-container">
+              <h2>Create Lesson Plan</h2>
+              <LessonPlan />
+            </div>
+        )}
+        {selectedOption === "downloadCurriculum" && (
+          <div className="downloads">
+            <AvailableCurriculum />
+          </div>
+        )}
         
       </div>
-      <LessonPlan />
+      {/* <LessonPlan /> */}
       {/* <NewRegister />
       <Login /> */}
     </div>

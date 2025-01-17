@@ -28,6 +28,7 @@ const Login = () => {
             if (response.ok) {
               const result = await response.text();
               alert(result);
+              window.location.href = '/teacher/dashboard' // Redirect to dashboard after successful login
             } else {
               alert('Failed to login');
             }
