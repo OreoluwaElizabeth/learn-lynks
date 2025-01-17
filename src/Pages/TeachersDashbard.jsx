@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './TeachersDashboard.css';
 import CreateCurriculum from '../Components/CreateCurriculum';
+import LessonPlan from '../Components/LessonPlan';
+import UniversityEducationCurriculum from '../Components/UniversityEducationCurriculum';
+import AvailableCurriculum from '../Components/AvailableCurriculum';
 
 const TeachersDashboard = () => {
   const [selectedOption, setSelectedOption] = useState('');
@@ -11,12 +14,9 @@ const TeachersDashboard = () => {
 
   return (
     <div className="dashboard-container">
-      {/* Header */}
       <div className="dashboard-header">
         <h1>Welcome to the Teachers Dashboard</h1>
       </div>
-
-      {/* Menu */}
       <div className="dashboard-menu">
         <ul className="menu-items">
           <li>
@@ -28,15 +28,16 @@ const TeachersDashboard = () => {
                 <option value="edit">Edit Curriculum</option>
                 <option value="delete">Delete Curriculum</option>
                 <option value="view">View Curriculum</option>
-                <option value="download">Download Curriculum</option>
+                <option value="downloadCurriculum">Download Curriculum</option>
               </select>
             </label>
           </li>
           <li>
             <label>
               Lesson Plan
-              <select>
-                <option value="create">Create Lesson Plan</option>
+              <select onChange={handleCurriculumChange}>
+                <option value="">Select an option</option>
+                <option value="createLesson">Create Lesson Plan</option>
                 <option value="edit">Edit Lesson Plan</option>
                 <option value="delete">Delete Lesson Plan</option>
                 <option value="view">View Lesson Plan</option>
@@ -55,19 +56,40 @@ const TeachersDashboard = () => {
           </li>
           <li>About</li>
         </ul>
-      </div>
+        <div>
+        {/* Register <NewRegister /> */}
+        {/* <UniversityEducationCurriculum /> */}
+        </div>
+        <hr />
 
-      {/* Main Content */}
+
+      </div>
       <div className="dashboard-main">
+
         {selectedOption === 'create' && (
           <div className="form-container">
             <h2>Create Curriculum</h2>
             <CreateCurriculum />
           </div>
         )}
+        {selectedOption === "createLesson" && (
+            <div className="form-container">
+              <h2>Create Lesson Plan</h2>
+              <LessonPlan />
+            </div>
+        )}
+        {selectedOption === "downloadCurriculum" && (
+          <div className="downloads">
+            <AvailableCurriculum />
+          </div>
+        )}
+        
       </div>
+      {/* <LessonPlan /> */}
+      {/* <NewRegister />
+      <Login /> */}
 
-      {/* Additional Design Section */}
+      </div>
       <div className="additional-section">
         <h2>Stay Organized and Efficient</h2>
         <p>
@@ -75,6 +97,7 @@ const TeachersDashboard = () => {
           Stay on top of your teaching tasks with ease!
         </p>
       </div>
+
     </div>
   );
 };
