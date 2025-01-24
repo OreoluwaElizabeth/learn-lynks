@@ -38,12 +38,11 @@ const UniversityEducationCurriculum = () => {
           Australia (with a strong focus on practical skills), 
           and the Netherlands (recognized for its innovative and student-centered approach)</h3>
         <ul>
-          <li><Link to="/world-education-curriculum">World Education Curriculum</Link></li>
-
+        <Link to="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/curriculum/">Cambridge curriculum</Link>
         </ul>
 
       </div>
-      <Link to="http://www.google.com">Go to Google</Link>
+      
       </div>
       
     </div>

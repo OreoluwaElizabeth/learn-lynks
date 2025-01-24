@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #2E4053;
+}
+  
+.progress-report {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+  
+.progress-report h2 {
+    color: #2E4053;
+    border-bottom: 2px solid #FFC67D;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+  
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+  
+table thead {
+    background-color: #2E4053;
+    color: #fff;
+}
+  
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+  
+table th {
+    font-weight: bold;
+}
+  
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+  
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+  
+p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #2E4053;
+}
+  
+@media (max-width: 768px) {
+    .progress-report {
+      padding: 10px;
+    }
+  
+    table th, table td {
+      padding: 8px;
+    }
+}
