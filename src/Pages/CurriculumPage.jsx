@@ -55,20 +55,3 @@ if (curriculumData.length === 0) {
 }
 
 export default CurriculumPage
-
-// import React from 'react';
-// import { useLocation } from 'react-router-dom';
-
-// const DisplayCurriculum = () => {
-//   const location = useLocation();
-//   const curriculumName = location.state?.curriculumName || 'No curriculum provided';
-
-//   return (
-//     <div>
-//       <h2>Display Curriculum</h2>
-//       <p>Curriculum Name: {curriculumName}</p>
-//     </div>
-//   );
-// };
-
-// export default DisplayCurriculum;

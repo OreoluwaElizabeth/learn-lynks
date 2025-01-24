@@ -37,13 +37,19 @@ const UniversityEducationCurriculum = () => {
           the United Kingdom (known for its rigorous academic standards), 
           Australia (with a strong focus on practical skills), 
           and the Netherlands (recognized for its innovative and student-centered approach)</h3>
-        <ul>
-          <li><Link to="/world-education-curriculum">World Education Curriculum</Link></li>
-
-        </ul>
-
+        <div>
+        <Link to="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/curriculum/">Cambridge curriculum</Link>
+        <br />
+        <Link to="https://www.britannica.com/education/World-Curriculums">Britannica curriculum</Link>
+        <br />
+        <Link to="https://www.nationalgeographic.com/education/world-curriculums/">National Geographic curriculum</Link>
+      
+          </div>
+        
       </div>
       <Link to="http://www.google.com">Go to Google</Link>
+      
+
       </div>
       
     </div>
