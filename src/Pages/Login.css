@@ -1,4 +1,4 @@
-/* .login-page {
+.login-page {
     background-image: url('../Images/Colorful.jpg');
     background-size: cover;
     background-position: center;
@@ -73,4 +73,4 @@ button[type="submit"]:hover {
     100% {
       transform: rotate(360deg);
     }
-} */
+}

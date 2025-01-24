@@ -50,6 +50,12 @@ const UniversityEducationCurriculum = () => {
       <Link to="http://www.google.com">Go to Google</Link>
       
 
+
+        <ul>
+        <Link to="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/curriculum/">Cambridge curriculum</Link>
+        </ul>
+
+      </div>
       </div>
       
     </div>

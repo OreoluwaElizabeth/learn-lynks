@@ -57,15 +57,12 @@ const TeachersDashboard = () => {
           <li>About</li>
         </ul>
         <div>
-        {/* Register <NewRegister /> */}
-        {/* <UniversityEducationCurriculum /> */}
+          {/* Register <NewRegister /> */}
+          {/* <UniversityEducationCurriculum /> */}
         </div>
         <hr />
-
-
       </div>
       <div className="dashboard-main">
-
         {selectedOption === 'create' && (
           <div className="form-container">
             <h2>Create Curriculum</h2>
@@ -73,22 +70,16 @@ const TeachersDashboard = () => {
           </div>
         )}
         {selectedOption === "createLesson" && (
-            <div className="form-container">
-              <h2>Create Lesson Plan</h2>
-              <LessonPlan />
-            </div>
+          <div className="form-container">
+            <h2>Create Lesson Plan</h2>
+            <LessonPlan />
+          </div>
         )}
         {selectedOption === "downloadCurriculum" && (
           <div className="downloads">
             <AvailableCurriculum />
           </div>
         )}
-        
-      </div>
-      {/* <LessonPlan /> */}
-      {/* <NewRegister />
-      <Login /> */}
-
       </div>
       <div className="additional-section">
         <h2>Stay Organized and Efficient</h2>
@@ -97,7 +88,6 @@ const TeachersDashboard = () => {
           Stay on top of your teaching tasks with ease!
         </p>
       </div>
-
     </div>
   );
 };
