@@ -23,7 +23,7 @@ const Register = () => {
       // console.log('Form submitted:', { firstName, lastName, email, password, role });
       try {
 
-        const response = await axios.post('http://localhost:8080/user/register', {
+        const response = await axios.post('http://localhost:8080/register', {
           firstName: firstName,
           lastName: lastName,
           email: email,
@@ -33,14 +33,7 @@ const Register = () => {
           role: role
         });
         
-      
-        if (role === 'STUDENT') {
-          navigate('/student/dashboard');
-        } else if (role === 'TEACHER') {
-          navigate('/teacher/dashboard');
-        } else {
-          navigate('/parent/dashboard');
-        }
+        navigate('/login');
         
       } catch (error) {
         if (error.response) {

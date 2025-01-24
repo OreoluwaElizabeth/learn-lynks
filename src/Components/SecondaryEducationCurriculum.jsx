@@ -56,6 +56,7 @@ const handleFileChange = (event) => {
 
   const handleDownload = async(fileName) => {
     const data = new FormData();
+    
     data.append('file', file);
 
     try{

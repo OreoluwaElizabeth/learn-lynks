@@ -9,11 +9,11 @@ import StudentDashboard from './Component/StudentDashboard';
 import Profile from './Component/Profile';
 import TeachersDashboard from './Pages/TeachersDashbard';
 import CreateCurriculum from './Components/CreateCurriculum';
-import CurriculumPage from './Pages/CurriculumPage'
-import LessonPlan from './Components/LessonPlan';
-import AvailableCurriculum from './Components/AvailableCurriculum';
 import UniversityEducationCurriculum from './Components/UniversityEducationCurriculum';
 import SecondaryEducationCurriculum from './Components/SecondaryEducationCurriculum';
+import CurriculumPage from './Pages/CurriculumPage';
+import LessonPlan from './Components/LessonPlan';
+import AvailableCurriculum from './Components/AvailableCurriculum';
 
 function App() {
     return (
@@ -29,12 +29,11 @@ function App() {
                 <Route path="/student/profile" element={<Profile />} />
                 <Route path="/teacher/dashboard" element={<TeachersDashboard />} />
                 <Route path="/create-curriculum" element={<CreateCurriculum />} />
-                {/* <Route path="/register" element={<NewRegister />} /> */}
-                <Route path="/curriculumPage" element={<CurriculumPage />} />
-                <Route path='/lessonPlan' element={<LessonPlan />} />
-                <Route path='/AvailableCurriculum' element={<AvailableCurriculum />} />
                 <Route path='/universityCurriculum' element={<UniversityEducationCurriculum />} />
                 <Route path='/secondaryCurriculum' element={<SecondaryEducationCurriculum />} />
+                <Route path="/curriculumPage" element={<CurriculumPage />} />
+                <Route path='/lessonPlan' element={<LessonPlan />} />
+                <Route path='AvaialableCurriculum' element={<AvailableCurriculum />} />
             </Routes>
         </BrowserRouter>
     );
