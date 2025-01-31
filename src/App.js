@@ -17,6 +17,7 @@ import AvailableCurriculum from './Components/AvailableCurriculum';
 import ParentDashboard from './Component/ParentDashboard';
 import Settings from './Component/Settings';
 import ProgressReport from './Component/ProgressReport';
+import PersonalizedLearning from './Components/PersonalizedLearning';
 
 function App() {
     return (
@@ -40,6 +41,7 @@ function App() {
                 <Route path='AvaialableCurriculum' element={<AvailableCurriculum />} />
                 <Route path='/settings' element={<Settings />}/>
                 <Route path='/progress-report' element={<ProgressReport />}/>
+                <Route path='/personalized-learning' element={<PersonalizedLearning />}/> 
             </Routes>
         </BrowserRouter>
     );
