@@ -4,6 +4,7 @@ import CreateCurriculum from '../Components/CreateCurriculum';
 import LessonPlan from '../Components/LessonPlan';
 import UniversityEducationCurriculum from '../Components/UniversityEducationCurriculum';
 import AvailableCurriculum from '../Components/AvailableCurriculum';
+import ProgressReport from '../Component/ProgressReport';
 
 const TeachersDashboard = () => {
   const [selectedOption, setSelectedOption] = useState('');
@@ -48,15 +49,16 @@ const TeachersDashboard = () => {
           <li>
             <label>
               Report
-              <select>
+              <select onChange={handleCurriculumChange}>
                 <option value="assessment">Assessment Report</option>
-                <option value="progress">Student Progress Report</option>
+                <option value="progress-report">Student Progress Report</option>
               </select>
             </label>
           </li>
           <li>About</li>
         </ul>
         <div>
+        
           {/* Register <NewRegister /> */}
           {/* <UniversityEducationCurriculum /> */}
         </div>
@@ -78,6 +80,12 @@ const TeachersDashboard = () => {
         {selectedOption === "downloadCurriculum" && (
           <div className="downloads">
             <AvailableCurriculum />
+          </div>
+        )}
+        {selectedOption === "progress-report" && (
+          <div className='reports'>
+            <h2>Progress Reports</h2>
+            <ProgressReport />
           </div>
         )}
       </div>

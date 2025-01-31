@@ -57,7 +57,6 @@ const UniversityEducationCurriculum = () => {
 
       </div>
       </div>
-      
     // </div>
   )
 };

@@ -57,16 +57,28 @@ const StudentDashboard = () => {
             </Link>
           </li>
           <li>
+            <Link to="/progress-report" className="nav-link">
+              <span className="icon">📈</span>
+              <span>Progress Report</span>
+            </Link>
+          </li>
+          {/* <li>
             <button className="nav-button" onClick={handleGetProgressReport}>
               <span className="icon">📈</span>
               <span>Progress Report</span>
             </button>
-          </li>
+          </li> */}
           <li>
             <button className="nav-button" onClick={handleGetLearningMaterials}>
               <span className="icon">📚</span>
               <span>Learning Materials</span>
             </button>
+          </li>
+          <li>
+            <Link to="/personalized-learning" className="nav-link">
+              <span className="icon">📊</span>
+              <span>Personalized Learning</span>
+            </Link>
           </li>
         </ul>
       </nav>
