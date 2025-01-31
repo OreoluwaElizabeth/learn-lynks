@@ -106,6 +106,12 @@ const CreateCurriculum = () => {
               });
 
               const result = await response.json();
+
+              // let result 
+              // const text = await response.json();
+              // if(text){
+              //   result = JSON.parse(text);
+              // }
               console.log(result)
       
               if (response.ok) {
