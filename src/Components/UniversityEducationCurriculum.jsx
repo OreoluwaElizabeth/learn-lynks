@@ -58,8 +58,8 @@ const UniversityEducationCurriculum = () => {
       </div>
       </div>
       
-    </div>
+    // </div>
   )
-}
+};
 
-export default UniversityEducationCurriculum
+export default UniversityEducationCurriculum;

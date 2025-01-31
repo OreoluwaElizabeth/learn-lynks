@@ -1,0 +1,110 @@
+.assessment-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+.assessment-container h2 {
+    font-size: 24px;
+    color: #2E4053;
+    margin-bottom: 20px;
+    text-align: center;
+}
+  
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+  
+.form-container h3 {
+    font-size: 20px;
+    color: #2E4053;
+    margin-bottom: 15px;
+}
+  
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #2E4053;
+}
+  
+.form-container input:focus {
+    outline: none;
+    border-color: #FFC67D;
+    box-shadow: 0 0 5px rgba(255, 198, 125, 0.5);
+}
+  
+.form-container button {
+    background-color: #FFC67D;
+    color: #2E4053;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+  
+.form-container button:hover {
+    background-color: #e0b468;
+}
+  
+.assessment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+  
+.assessment-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+.assessment-card h3 {
+    font-size: 20px;
+    color: #2E4053;
+    margin-bottom: 10px;
+}
+  
+.assessment-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+  
+.assessment-card strong {
+    color: #2E4053;
+}
+  
+.assessment-card button {
+    background-color: #FFC67D;
+    color: #2E4053;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+  
+.assessment-card button:hover {
+    background-color: #e0b468;
+}
+  
+.edit-list .form-container {
+    margin-top: 20px;
+}

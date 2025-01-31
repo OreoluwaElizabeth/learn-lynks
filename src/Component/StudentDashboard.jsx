@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './student.css'; // Import the CSS file
+import './student.css'; 
+import Assessment from './Assessment';
 
 const StudentDashboard = () => {
   const [learningMaterials, setLearningMaterials] = useState([]);
@@ -97,6 +98,7 @@ const StudentDashboard = () => {
           </section>
         )}
       </main>
+      <Assessment />
     </div>
   );
 };

@@ -9,7 +9,7 @@ const Header = () => {
             <div className="icon-logo">
                 <AiOutlineBook />
                 <h2>
-                    <span>Learn</span>
+                    <span className='learn'>Learn</span>
                     <span className='lynks'>Lynks</span>
                 </h2>
             </div>
