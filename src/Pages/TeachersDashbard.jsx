@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 import './TeachersDashboard.css';
 import CreateCurriculum from '../Components/CreateCurriculum';
 import LessonPlan from '../Components/LessonPlan';
@@ -95,6 +97,12 @@ const TeachersDashboard = () => {
           Our dashboard helps you manage your curriculum, lesson plans, and reports all in one place.
           Stay on top of your teaching tasks with ease!
         </p>
+      </div>
+      <div className='back-home'>
+        <Link to="/">
+          <AiOutlineArrowLeft size={24} style={{ marginBottom: '10px' }} />
+          <span>Back to Home</span>
+        </Link>
       </div>
     </div>
   );
