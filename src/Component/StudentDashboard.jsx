@@ -36,7 +36,7 @@ const StudentDashboard = () => {
   return (
     <div className="student-dashboard">
       {/* Header */}
-      <header className="dashboard-header">
+      <header className="dashboard-header student-header">
         <h1>Welcome to Your Student Dashboard</h1>
         <p>Stay organized and track your progress effortlessly.</p>
       </header>
@@ -45,6 +45,10 @@ const StudentDashboard = () => {
       <nav className="dashboard-nav">
         <ul>
           <li>
+            <Link to="/" className='back-home-arrow'>
+              <span className='arrow'>←</span>
+              <span className='text'>Back to Home</span>
+            </Link>
             <Link to="/student/profile" className="nav-link">
               <span className="icon">👤</span>
               <span>Profile</span>
