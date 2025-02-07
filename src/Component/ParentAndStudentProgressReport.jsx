@@ -22,18 +22,18 @@ const ParentAndStudentProgressReport = () => {
     
         const formattedData = {
           ...formData,
-          userId: Number(formData.id),
+          id: Number(formData.id),
       };
     
         console.log("Submitting Data:", formData);
       
         try {
           const response = await fetch('http://localhost:8080/api/progress-reports/progress-report-by-id', { 
-         
+            method: 'POST', 
             headers: {
               'Content-Type': 'application/json', 
             },
-     
+            body: JSON.stringify(formData),
           });
     
           const responseText = await response.text();
