@@ -61,7 +61,7 @@ const StudentDashboard = () => {
             </Link>
           </li>
           <li>
-            <Link to="/progress-report" className="nav-link">
+            <Link to='/parentAndStudentProgressReport' className="nav-link">
               <span className="icon">📈</span>
               <span>Progress Report</span>
             </Link>

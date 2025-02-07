@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react'
+import React, { useState} from 'react'
 import './progress.css';
 
 const ParentAndStudentProgressReport = () => {
@@ -21,10 +21,9 @@ const ParentAndStudentProgressReport = () => {
         event.preventDefault();
     
         const formattedData = {
-          ...formData,
           id: Number(formData.id),
       };
-    
+
         console.log("Submitting Data:", formData);
       
         try {
@@ -33,28 +32,43 @@ const ParentAndStudentProgressReport = () => {
             headers: {
               'Content-Type': 'application/json', 
             },
-            body: JSON.stringify(formData),
+            body: JSON.stringify(formattedData),
           });
     
-          const responseText = await response.text();
+        //   const responseText = await response.text();
           
           if (!response.ok) {
+            const errorMessage = await response.text();
+        throw new Error(`HTTP error! Status: ${response.status}, Message: ${errorMessage}`);
+        }
+
+        const data = await response.json();
+        console.log("Fetched Reports:", data);
+
+        setProgressReports([data]);
+        setLoading(false);
+        console.log("progress successfully fetched")
             // console.error("Server Response:", responseText); 
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
+        //     throw new Error(`HTTP error! Status: ${response.status}`);
+        //   }
           
-          // const data = await response.json();
-          const data = JSON.parse(responseText);
-          alert('Progress report submitted successfully');
+        //   const data = await response.json();
+        // //   const data = JSON.parse(responseText);
+        //   alert('Progress report submitted successfully');
           
-          setFormData({
-            id: ""
-          });
+        //   setFormData({
+        //     id: ""
+        //   });
           
         } catch (error) {
           console.error('Error:', error);
           alert('An error occurred while submitting the progress report');
+        setError(error.message);
+        setLoading(false);
         }
+        setFormData({
+            id: "",
+        })
     
       }
 
@@ -85,8 +99,8 @@ const ParentAndStudentProgressReport = () => {
         <tbody>
           {progressReports.map((report, index) => (
             <tr key={index}>
-              <td>{report.user?.id || <span style={{ color: "red" }}>MISSING</span>}</td>
-              <td>{report.lessonPlan?.lessonPlanName || <span style={{ color: "red" }}>MISSING</span>}</td>
+              <td>{report.userId || <span style={{ color: "red" }}>MISSING</span>}</td>
+              <td>{report.lessonPlanName || <span style={{ color: "red" }}>MISSING</span>}</td>
               <td>{report.grade}</td>
               <td>{report.status}</td>
               <td>{report.weakness}</td>
