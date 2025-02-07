@@ -21,7 +21,7 @@
         <h1>Parent Dashboard</h1>
         <nav>
           <ul>
-            <li><a href='/progress-report'>View Child's Progress Report</a></li>
+            <li><a href='/progressReportForParentAndStudent'>View Child's Progress Report</a></li>
             <li><a href='#'>Notifications</a></li>
             <li><a href='/settings'>Settings</a></li>
           </ul>

@@ -55,12 +55,13 @@ const handleChange = (event) => {
       setFormData({
         userId: "",
         lessonPlanId: "",
+        // lessonPlanName: "",
         recommendation: "",
         status: "ACTIVE",
         grade: "A",
-        weakness: "",
-        strength: "",
-        reportDate: "",
+        // weakness: "",
+        // strength: "",
+        // reportDate: "",
       });
       
     } catch (error) {
@@ -76,6 +77,8 @@ const handleChange = (event) => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const data = await response.json();
+      console.log("Fetched Reports:", data);
+
       console.log("Fetched Reports:", data);
       setProgressReports(data);
       setLoading(false);
@@ -151,7 +154,7 @@ const handleChange = (event) => {
         <thead>
           <tr>
             <th>User</th>
-            <th>Lesson Plan</th>
+            <th>Lesson Plan Name</th>
             <th>Grade</th>
             <th>Status</th>
             <th>Weakness</th>
@@ -163,8 +166,8 @@ const handleChange = (event) => {
         <tbody>
           {progressReports.map((report, index) => (
             <tr key={index}>
-              <td>{report.userId}</td>
-              <td>{report.lessonPlanId}</td>
+              <td>{report.user?.id || <span style={{ color: "red" }}>MISSING</span>}</td>
+              <td>{report.lessonPlan?.lessonPlanName || <span style={{ color: "red" }}>MISSING</span>}</td>
               <td>{report.grade}</td>
               <td>{report.status}</td>
               <td>{report.weakness}</td>
