@@ -10,7 +10,7 @@ jobs:
 
   steps: 
     -name: Checkout code
-     uses: actions/stepup-node@v4
+     uses: actions/setup-node@v4
      
     -name: Install node
      uses: actions/stepup-node@v4
