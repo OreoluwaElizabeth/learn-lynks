@@ -2,41 +2,43 @@ name: push to s3 bucket
 
 on:
   push:
-  branches:
-    - submain
+    branches:
+      - submain
 
 jobs:
-  runs-on: ubuntu-latest
+  deployment-to-s3:
+    
+    runs-on: ubuntu-latest
 
-  steps: 
-    - name: Checkout code
-      uses: actions/setup-node@v4
+    steps: 
+      - name: Checkout code
+        uses: actions/setup-node@v4
      
-    - name: Install node
-      uses: actions/stepup-node@v4
-      with: 
-       node-version: "20"
+      - name: Install node
+        uses: actions/stepup-node@v4
+        with: 
+         node-version: "20"
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run build
-      run: npm run build
+      - name: Run build
+        run: npm run build
 
-    - name: Install AWS CLI
-      run: |
+      - name: Install AWS CLI
+        run: |
           curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
           unzip awscliv2.zip
           sudo ./aws/install --update
 
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
 
-    - name: Upload to S3  
-      run: |  
-        aws s3 sync ./build s3://oreoluwatitans --delete
+      - name: Upload to S3  
+        run: |  
+          aws s3 sync ./build s3://oreoluwatitans --delete
      
