@@ -9,19 +9,19 @@ jobs:
   runs-on: ubuntu-latest
 
   steps: 
-    -name: Checkout code
-     uses: actions/setup-node@v4
+    - name: Checkout code
+      uses: actions/setup-node@v4
      
-    -name: Install node
-     uses: actions/stepup-node@v4
-     with: 
+    - name: Install node
+      uses: actions/stepup-node@v4
+      with: 
        node-version: "20"
 
-    -name: Install dependencies
-     run: npm install
+    - name: Install dependencies
+      run: npm install
 
-    -name: Run build
-     run: npm run build
+    - name: Run build
+      run: npm run build
 
     - name: Install AWS CLI
       run: |
